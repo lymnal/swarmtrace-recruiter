@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="A synthetic SwarmTrace investigation by Ethan Sam.">
+  <title>SwarmTrace | Investigation demo</title>
+  <style>
+    :root { color-scheme: dark; background: #101718; color: #edf3ef; font: 100%/1.55 system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { max-width: 50rem; padding: 3rem 1.25rem; margin: 0 auto; }
+    h1 { font-size: clamp(2.5rem, 8vw, 4rem); line-height: 1.05; margin: 0 0 1rem; letter-spacing: -.05em; }
+    h2 { margin-top: 2.5rem; }
+    p { max-width: 65ch; }
+    a { color: #8ee5ce; }
+    .context { color: #8ee5ce; font-weight: 650; }
+    .lede { color: #c1d1cb; font-size: 1.15rem; }
+    details { border: 1px solid #425851; border-radius: .55rem; background: #172223; margin: .75rem 0; }
+    summary { cursor: pointer; padding: 1rem; font-weight: 700; }
+    summary:focus-visible, a:focus-visible { outline: 2px solid #8ee5ce; outline-offset: 3px; }
+    summary time { font-family: ui-monospace, monospace; margin-right: .5rem; color: #8ee5ce; }
+    .evidence { padding: 0 1rem 1rem; }
+    .source-label { color: #b5c7c0; font: .86rem ui-monospace, monospace; }
+    blockquote { border-left: 3px solid #5e887b; margin: .75rem 0 1rem; padding: .1rem .8rem; }
+    table { width: 100%; text-align: left; border-collapse: collapse; margin: .6rem 0; font-size: .92rem; }
+    th, td { border-bottom: 1px solid #425851; padding: .45rem .25rem; }
+    footer { border-top: 1px solid #425851; margin-top: 2.5rem; padding-top: 1rem; color: #c1d1cb; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="context">Synthetic investigation · Ethan Sam</p>
+    <h1>SwarmTrace</h1>
+    <p class="lede">A wrong pickup time spreads through a group of agents. One agent checks the calendar and sends a correction. Follow the evidence to see where it lands.</p>
+
+    <h2>Book donation pickup</h2>
+    <details name="timeline" open>
+      <summary><time>09:02</time> The wrong time spreads</summary>
+      <div class="evidence">
+        <p class="source-label">E01 · Chat</p>
+        <blockquote>
+          <p><strong>Schedule agent:</strong> Book pickup is at 4:00 p.m.</p>
+          <p><strong>Board agent:</strong> I’ll put 4:00 p.m. on the volunteer board.</p>
+        </blockquote>
+        <p><strong>Supported:</strong> The board agent stated an intention. Check the artifact to establish what was posted.</p>
+      </div>
+    </details>
+    <details name="timeline">
+      <summary><time>09:05</time> The calendar confirms a different time</summary>
+      <div class="evidence">
+        <p class="source-label">E02 · Calendar response</p>
+        <blockquote><p>Book donation pickup · confirmed time 3:00 p.m.</p></blockquote>
+        <p class="source-label">E03 · Chat</p>
+        <blockquote>
+          <p><strong>Calendar agent:</strong> The calendar says 3:00 p.m. Please update the volunteer board and the print handout.</p>
+          <p><strong>Board agent:</strong> Got it. I’ll update both.</p>
+        </blockquote>
+        <p><strong>Supported:</strong> The tool output corroborates the corrected time. The reply records acknowledgment and a plan.</p>
+      </div>
+    </details>
+    <details name="timeline">
+      <summary><time>09:09</time> The board changes. The handout stays stale.</summary>
+      <div class="evidence">
+        <p class="source-label">E04–E05 · Before-and-after artifact snapshots</p>
+        <table aria-label="Pickup time shown in the two artifacts">
+          <thead><tr><th scope="col">Artifact</th><th scope="col">Before</th><th scope="col">At 09:09</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Volunteer board</th><td>4:00 p.m.</td><td>3:00 p.m.</td></tr>
+            <tr><th scope="row">Print handout</th><td>4:00 p.m.</td><td>4:00 p.m.</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Supported:</strong> The board was corrected. The handout still showed 4:00 p.m. at the final check. Delivery and readership remain unknown.</p>
+      </div>
+    </details>
+  </main>
+  <footer>All evidence on this page is fictional. <a href="https://ethansam.io/">Ethan Sam’s portfolio</a></footer>
+</body>
+</html>
