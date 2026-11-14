@@ -2,6 +2,8 @@
 
 **Trace a correction from the first message to the artifact someone actually changed.**
 
+[Open the interactive demo →](https://lymnal.github.io/swarmtrace-recruiter/)
+
 I built the investigator workbench for a three-person team at the [AI Swarm Dynamics Hackathon](https://swarmchasing.com/logistics/). The workbench brings chat, tool output, and resulting artifacts into one timeline so a reviewer can see which parts of an agent's account are supported by evidence.
 
 ## Walk through a fictional case
@@ -54,10 +56,6 @@ The calendar response supports the correction. The reply establishes acknowledgm
 The snapshots support a partial correction. They leave open whether anyone saw either version of the handout.
 
 </details>
-
-## Try the workbench
-
-Download [`index.html`](index.html) and open it in your browser. Select a timeline entry to inspect its evidence and see which conclusions it supports. The demo works offline and has no dependencies.
 
 All records, messages, timestamps, and artifacts in this repository were created for this demonstration. The example demonstrates my workbench design. The research project used the [AI Village dataset from AI Digest](https://huggingface.co/datasets/aidigestorg/ai-village).
 
